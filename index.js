@@ -45,13 +45,13 @@ client.on('message', (message) => {
     return message.reply('pong');
   }
 
-  if(message.content == '!정보') {
+  if(message.content == '!si') {
     let embed = new Discord.RichEmbed()
     let img = 'https://media.discordapp.net/attachments/708094397304274956/738749058616655892/galaxy.png?width=467&height=467';
     var duration = moment.duration(client.uptime).format(" D [일], H [시간], m [분], s [초]");
-    embed.setColor('#186de6')
+    embed.setColor('#32009D')
     embed.setAuthor('server info of 우주 BOT', img)
-    embed.setFooter(`우주 Bot`)
+    embed.setFooter(`우주 BOT `)
     embed.addBlankField()
     embed.addField('RAM usage',    `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`, true);
     embed.addField('running time', `${duration}`, true);
@@ -80,36 +80,35 @@ client.on('message', (message) => {
     let img = 'https://media.discordapp.net/attachments/708094397304274956/738749058616655892/galaxy.png?width=467&height=467';
     let embed = new Discord.RichEmbed()
       .setTitle('타이틀')
-      .setURL('https://discord.gg/GKZMnp')
+      .setURL('http://www.twitch.tv/galaxy0423')
       .setAuthor('럭시', img, 'http://www.twitch.tv/galaxy0423')
       .setThumbnail(img)
       .addBlankField()
-      .addField('유튜브', 'https://www.youtube.com/channel/UCz7B5q7wPM_7NxnlTszIPjg')
-      .addField('트위치', 'http://www.twitch.tv/galaxy0423', true)
+      .addField('트위치', 'http://www.twitch.tv/galaxy0423')
+      .addField('유튜브', 'https://www.youtube.com/channel/UCz7B5q7wPM_7NxnlTszIPjg', true)
       .addField('디스코드', 'https://discord.gg/GKZMnp', true)
       .addBlankField()
       .setTimestamp()
       .setFooter('Made by 럭시', img)
-      .setColor('#32009D')
 
-    message.channel.send(!도움말)
+    message.channel.send(embed)
   } else if(message.content == '!help') {
-    let helpImg = 'https://media.discordapp.net/attachments/725916808405712978/738749417535832064/KakaoTalk_20200514_185244621_02.jpg?width=461&height=467';
+    let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
       {name: '!help', desc: 'help'},
       {name: 'ping', desc: '현재 핑 상태'},
-      {name: '!제작자', desc: '제작자 프로필'},
+      {name: '!제작자', desc: '제작자 소개'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
       {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
-      {name: '!청소', desc: '텍스트 지움(1~100)'},
+      {name: '!청소', desc: '텍스트 지움'},
       {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
       {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
-      .setAuthor('Help of Galaxy', helpImg)
+      .setAuthor('Help of 콜라곰 BOT', helpImg)
       .setColor('#32009D')
-      .setFooter(`럭시 BOT`)
+      .setFooter(`우주 BOT`)
       .setTimestamp()
     
     commandList.forEach(x => {
@@ -191,7 +190,7 @@ client.on('message', (message) => {
     if(isNum && (clearLine <= 0 || 100 < clearLine)) {
       message.channel.send("1부터 100까지의 숫자만 입력해주세요.")
       return;
-    } else if(!isNum) { // c @럭시 3
+    } else if(!isNum) { // c @나긋해 3
       if(message.content.split('<@').length == 2) {
         if(isNaN(message.content.split(' ')[2])) return;
 
