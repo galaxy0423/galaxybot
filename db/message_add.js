@@ -33,7 +33,7 @@ function saveDB(
                         message: message,
                         authorId: authorId,
                         authorUsername: authorUsername,
-                        authorBot: authorBot,
+                        authorBot: authorBots,
                         embed: embed,
                         createTime: createTime,
                      });
