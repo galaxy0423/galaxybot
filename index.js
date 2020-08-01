@@ -5,7 +5,7 @@ const moment = require("moment");
 require("moment-duration-format");
 const momenttz = require('moment-timezone');
 const MessageAdd = require('./db/message_add.js')
-const welcomeChannelName = "신입한명추가요";
+const welcomeChannelName = "안녕하세요";
 const byeChannelName = "안녕히가세요";
 const welcomeChannelComment = "어서오세요.";
 const byeChannelComment = "안녕히가세요.";
@@ -47,11 +47,11 @@ client.on('message', (message) => {
 
   if(message.content == '!si') {
     let embed = new Discord.RichEmbed()
-    let img = 'https://media.discordapp.net/attachments/708094397304274956/738749058616655892/galaxy.png?width=467&height=467';
+    let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
     var duration = moment.duration(client.uptime).format(" D [일], H [시간], m [분], s [초]");
-    embed.setColor('#32009D')
-    embed.setAuthor('server info of 우주 BOT', img)
-    embed.setFooter(`우주 BOT `)
+    embed.setColor('#186de6')
+    embed.setAuthor('server info of 콜라곰 BOT', img)
+    embed.setFooter(`콜라곰 BOT ❤️`)
     embed.addBlankField()
     embed.addField('RAM usage',    `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`, true);
     embed.addField('running time', `${duration}`, true);
@@ -76,20 +76,22 @@ client.on('message', (message) => {
     message.channel.send(embed);
   }
 
-  if(message.content == '!제작자') {
-    let img = 'https://media.discordapp.net/attachments/708094397304274956/738749058616655892/galaxy.png?width=467&height=467';
+  if(message.content == 'embed') {
+    let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
     let embed = new Discord.RichEmbed()
       .setTitle('타이틀')
-      .setURL('http://www.twitch.tv/galaxy0423')
-      .setAuthor('럭시', img, 'http://www.twitch.tv/galaxy0423')
+      .setURL('http://www.naver.com')
+      .setAuthor('나긋해', img, 'http://www.naver.com')
       .setThumbnail(img)
       .addBlankField()
-      .addField('트위치', 'http://www.twitch.tv/galaxy0423')
-      .addField('유튜브', 'https://www.youtube.com/channel/UCz7B5q7wPM_7NxnlTszIPjg', true)
-      .addField('디스코드', 'https://discord.gg/GKZMnp', true)
+      .addField('Inline field title', 'Some value here')
+      .addField('Inline field title', 'Some value here', true)
+      .addField('Inline field title', 'Some value here', true)
+      .addField('Inline field title', 'Some value here', true)
+      .addField('Inline field title', 'Some value here1\nSome value here2\nSome value here3\n')
       .addBlankField()
       .setTimestamp()
-      .setFooter('Made by 럭시', img)
+      .setFooter('나긋해가 만듬', img)
 
     message.channel.send(embed)
   } else if(message.content == '!help') {
@@ -97,7 +99,7 @@ client.on('message', (message) => {
     let commandList = [
       {name: '!help', desc: 'help'},
       {name: 'ping', desc: '현재 핑 상태'},
-      {name: '!제작자', desc: '제작자 소개'},
+      {name: 'embed', desc: 'embed 예제1'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
       {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
       {name: '!청소', desc: '텍스트 지움'},
@@ -107,8 +109,8 @@ client.on('message', (message) => {
     let commandStr = '';
     let embed = new Discord.RichEmbed()
       .setAuthor('Help of 콜라곰 BOT', helpImg)
-      .setColor('#32009D')
-      .setFooter(`우주 BOT`)
+      .setColor('#186de6')
+      .setFooter(`콜라곰 BOT ❤️`)
       .setTimestamp()
     
     commandList.forEach(x => {
@@ -148,9 +150,9 @@ client.on('message', (message) => {
     if(message.member != null) { // 채널에서 공지 쓸 때
       let contents = message.content.slice('!전체공지2'.length);
       let embed = new Discord.RichEmbed()
-        .setAuthor('공지 of 우주 BOT')
-        .setColor('#32009D')
-        .setFooter(`우주 BOT`)
+        .setAuthor('공지 of 콜라곰 BOT')
+        .setColor('#186de6')
+        .setFooter(`콜라곰 BOT ❤️`)
         .setTimestamp()
   
       embed.addField('공지: ', contents);
