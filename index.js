@@ -38,6 +38,10 @@ client.on('message', (message) => {
     return message.reply('pong');
   }
 
+  if(message.content == 'no pain') {
+    return message.reply('no gain');
+  }
+
   if(message.content == '>si') {
     let embed = new Discord.RichEmbed()
     let img = 'https://media.discordapp.net/attachments/739067472400875611/739123139296100403/galaxy.png?width=467&height=467';
@@ -96,6 +100,7 @@ client.on('message', (message) => {
       {name: '>청소', desc: '텍스트 지움'},
       {name: '>초대코드', desc: '해당 채널의 초대 코드 표기'},
       {name: '>초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
+      {name: '>si', desc: '현재 봇 정보'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
