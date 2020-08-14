@@ -42,6 +42,10 @@ client.on('message', (message) => {
     return message.reply('pong');
   }
 
+  if(message.content == '>농담') {
+    return message.reply('A : 님 어금니가 영어로 뭐임? B : 몰라 A : 님 공부 잘하잖아 B : 근데 A : 그니까 어금니가 영어로 뭐냐고 B : 몰라 A : ㅅㅂ');
+  }
+
   if(message.content == '>si') {
     let embed = new Discord.RichEmbed()
     let img = 'https://media.discordapp.net/attachments/739067472400875611/739123139296100403/galaxy.png?width=467&height=467';
