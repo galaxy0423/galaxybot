@@ -38,18 +38,6 @@ client.on('message', (message) => {
     return message.reply('no gain');
   }
 
-  if(message.content == '>농담') {
-    return message.reply('A : 님 어금니가 영어로 뭐임?
-    B : 몰라
-    A : 님 공부 잘하잖아
-    B : 근데
-    A : 그니까 어금니가 영어로 뭐냐고
-    B : 몰라 
-    A : ㅅㅂ
-    그냥 갑자기 해보고싶었다');
-  }
-
-
   if(message.content == 'ping') {
     return message.reply('pong');
   }
