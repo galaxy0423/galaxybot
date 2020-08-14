@@ -46,6 +46,30 @@ client.on('message', (message) => {
     return message.reply('천재');
   }
 
+  if(message.content == '>휴턴') {
+    return message.reply('마음씨 좋으신 분');
+  }
+
+  if(message.content == '>싸테') {
+    return message.reply('우리들의 가수이자 고인물, 선생님');
+  }
+
+  if(message.content == '>티머') {
+    return message.reply('우리들의 친구이자, 마음씨 착하신분');
+  }
+
+  if(message.content == '>선주') {
+    return message.reply('귀여우시고 섹시하신(?)분');
+  }
+
+  if(message.content == '>미로') {
+    return message.reply('우리들의 귀여운 동생');
+  }
+
+  if(message.content == '>쪼꼬카레') {
+    return message.reply('우리들의 선배이자 마음씨 착하신분');
+  }
+
   if(message.content == '블루스크린') {
     return message.reply('https://tenor.com/view/chris-turns-blue-kid-turns-blue-and-fucking-dies-chris-turns-blue-and-fucking-dies-chris-turns-blue-and-dies-chris-gif-16761628');
   }
