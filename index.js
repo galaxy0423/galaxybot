@@ -42,6 +42,18 @@ client.on('message', (message) => {
     return message.reply('pong');
   }
 
+  if(message.content == '화딱지나네') {
+    return message.reply('워워 릴렉스 캄다운');
+  }
+
+  if(message.content == '레식') {
+    return message.reply('꿀잼');
+  }
+
+  if(message.content == '탈콥') {
+    return message.reply('공포겜');
+  }
+
   if(message.content == '>농담') {
     return message.reply('A : 님 어금니가 영어로 뭐임? B : 몰라 A : 님 공부 잘하잖아 B : 근데 A : 그니까 어금니가 영어로 뭐냐고 B : 몰라 A : ㅅㅂ');
   }
