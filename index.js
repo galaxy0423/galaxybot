@@ -42,6 +42,10 @@ client.on('message', (message) => {
     return message.reply('pong');
   }
 
+  if(message.content == '>무') {
+    return message.reply('천재');
+  }
+
   if(message.content == '블루스크린') {
     return message.reply('https://tenor.com/view/chris-turns-blue-kid-turns-blue-and-fucking-dies-chris-turns-blue-and-fucking-dies-chris-turns-blue-and-dies-chris-gif-16761628');
   }
